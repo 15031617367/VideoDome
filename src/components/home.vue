@@ -1,9 +1,11 @@
 <template>
     <div>
         <el-container>
+            <!-- :default-active="$route.path" -->
             <el-header class="Header">
                 <el-menu
-                    :default-active="MenuIndex"
+                    :default-active="onRoutes" 
+                    router
                     class="el-menu-demo menu"
                     mode="horizontal"
                     @select="handleSelect"
@@ -15,20 +17,21 @@
                                 <img src="" alt="logo">
                             </div>
                             <div class="Header-flex-menu">
-                                <el-menu-item index="1">首页</el-menu-item>
-                                <el-menu-item index="2" @click="Link('Illusory')">科幻</el-menu-item>
-                                <el-menu-item index="3">动作</el-menu-item>
-                                <el-menu-item index="4">剧情</el-menu-item>
-                                <el-menu-item index="5">喜剧</el-menu-item>
-                                <el-menu-item index="6">恐怖</el-menu-item>
-                                <el-menu-item index="7">悬疑</el-menu-item>
-                                <el-menu-item index="8">记录</el-menu-item>
-                                <el-submenu  index="10">
-                                    <template slot="title">全部美剧</template>
-                                    <el-menu-item index="2-1">全部美剧1</el-menu-item>
-                                    <el-menu-item index="2-2">全部美剧2</el-menu-item>
-                                    <el-menu-item index="2-3">全部美剧3</el-menu-item>
-                                </el-submenu >
+                                <el-menu-item index="/">首页</el-menu-item>
+                                <el-menu-item index="/science" @click="Link('Science')">科幻</el-menu-item>
+                                <el-menu-item index="/action" @click="Link('Action')">动作</el-menu-item>
+                                <el-menu-item index="/plot" @click="Link('Plot')">剧情</el-menu-item>
+                                <el-menu-item index="/comedy" @click="Link('Comedy')">喜剧</el-menu-item>
+                                <el-menu-item index="/terror" @click="Link('Terror')">恐怖</el-menu-item>
+                                <el-menu-item index="/suspense" @click="Link('Suspense')">悬疑</el-menu-item>
+                                <el-menu-item index="/record" @click="Link('Record')">记录</el-menu-item>
+                            </div>
+                            <div>
+                                <el-input
+                                    placeholder="请输入内容"
+                                    suffix-icon="el-icon-date"
+                                    v-model="input6">
+                                </el-input>
                             </div>
                         </div>
                 </el-menu>
@@ -45,7 +48,7 @@
 export default {
     data () {
         return {
-            MenuIndex:'1'
+           
         }
     },
     mounted(){
@@ -55,14 +58,17 @@ export default {
 
     },
     computed:{
+        onRoutes(){
+            return this.$route.path.replace('/','/')
+        }
 
     },
     methods:{
         handleSelect(key, keyPath) {
-            console.log(key, keyPath);
+            
         },
         //菜单跳页
-        Link(name){
+        Link(name,title){
             this.$router.push({
                 name: name,
             });

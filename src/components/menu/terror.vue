@@ -1,8 +1,7 @@
 <template>
     <div>
         <div>
-            
-
+            恐怖
         </div>
     </div>
 </template>
@@ -11,10 +10,12 @@
 export default {
     data(){
         return {
-            
+           
         }
     },
-    mounted(){},
+    mounted(){
+      
+    },
     components:{},
     computed:{},
     methods:{},

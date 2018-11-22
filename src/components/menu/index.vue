@@ -2,8 +2,8 @@
     <div>
         <!-- 轮播 -->
         <el-carousel :interval="5000" arrow="always" height="400px">
-            <el-carousel-item v-for="item in 4" :key="item">
-                <h3>{{ item }}</h3>
+            <el-carousel-item v-for="item in WheelPlanting" :key="item">
+                <img :src="item.img" alt="">
             </el-carousel-item>
         </el-carousel>
 
@@ -14,13 +14,13 @@
             </div>
             <!-- 电影列表 -->
             <div class="Film_list">
-                <div v-for="(time,index) in 5" class="Film_list_modular" :key="index">
+                <div v-for="(time,index) in 5" class="Film_list_modular" :key="index" @click="details" >
                     <div class="nusp"></div>
                     <el-card :body-style="{ padding: '0px' }">
-                        <img src="http://img2.imgtn.bdimg.com/it/u=2249893882,1165836821&fm=214&gp=0.jpg" class="image">
+                        <img :src="film" class="image">
                         <div>
-                            <div>名字</div>
-                            <div>描述</div>
+                            <div class="Film_list_modular_name">毒液：致命守护者</div>
+                            <div class="Film_list_modular_describe">毒液来袭</div>
                         </div>
                     </el-card>
                 </div>
@@ -37,10 +37,10 @@
                 <div v-for="(time,index) in 5" class="Film_list_modular" :key="index">
                     <div class="nusp"></div>
                     <el-card :body-style="{ padding: '0px' }">
-                        <img src="http://img2.imgtn.bdimg.com/it/u=2249893882,1165836821&fm=214&gp=0.jpg" class="image">
+                        <img :src="film" class="image">
                         <div>
-                            <div>名字</div>
-                            <div>描述</div>
+                            <div class="Film_list_modular_name">毒液：致命守护者</div>
+                            <div class="Film_list_modular_describe">毒液来袭</div>
                         </div>
                     </el-card>
                 </div>
@@ -50,17 +50,17 @@
         <div class="Film_Modular">
             <div class="Film_title_flex">
                 <div class="Film_title">恐怖</div>
-                <div class="Film_More">更多</div>
+                <div class="Film_More">毒液来袭</div>
             </div>
             <!-- 电影列表 -->
             <div class="Film_list">
                 <div v-for="(time,index) in 5" class="Film_list_modular" :key="index">
                     <div class="nusp"></div>
                     <el-card :body-style="{ padding: '0px' }">
-                        <img src="http://img2.imgtn.bdimg.com/it/u=2249893882,1165836821&fm=214&gp=0.jpg" class="image">
+                        <img :src="film" class="image">
                         <div>
-                            <div>名字</div>
-                            <div>描述</div>
+                            <div class="Film_list_modular_name">毒液：致命守护者</div>
+                            <div class="Film_list_modular_describe">毒液来袭</div>
                         </div>
                     </el-card>
                 </div>
@@ -76,10 +76,10 @@
                 <div v-for="(time,index) in 5" class="Film_list_modular" :key="index">
                     <div class="nusp"></div>
                     <el-card :body-style="{ padding: '0px' }">
-                        <img src="http://img2.imgtn.bdimg.com/it/u=2249893882,1165836821&fm=214&gp=0.jpg" class="image">
+                        <img :src="film" class="image">
                         <div>
-                            <div>名字</div>
-                            <div>描述</div>
+                            <div class="Film_list_modular_name">毒液：致命守护者</div>
+                            <div class="Film_list_modular_describe">毒液来袭</div>
                         </div>
                     </el-card>
                 </div>
@@ -94,7 +94,14 @@
 export default {
     data () {
         return {
-
+            //轮播
+            WheelPlanting:[
+                {img:require("../../assets/L1.jpg")},
+                {img:require("../../assets/L2.jpg")},
+                {img:require("../../assets/L3.jpg")},
+                {img:require("../../assets/L4.jpg")}
+            ],
+            film:require("../../assets/Film.jpg"),
         }
     },
     mounted(){
@@ -107,7 +114,11 @@ export default {
 
     },
     methods:{
-       
+        details(){
+            this.$router.push({
+                name:"Details"
+            })
+        }
     }
 
 }
@@ -149,6 +160,9 @@ export default {
     flex-wrap:wrap;
     justify-content:space-around;
 }
+.Film_list_modular_describe{
+    color:#68838B
+}   
 /* 卡片 */
 .time {
     font-size: 13px;
@@ -180,7 +194,8 @@ export default {
     clear: both
 }
 .Film_list_modular{
-    display: flex
+    display: flex;
+    cursor: pointer;
 }
 .nusp{
     width: 4px;
