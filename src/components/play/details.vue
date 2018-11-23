@@ -30,12 +30,7 @@
                     <el-button type="info" v-for="(tiem,index) in 4" :key="index">地址{{index}}</el-button>
                 </div>
             </div>
-
         </div>
-
-
-
-
     </div>
 </template>
 

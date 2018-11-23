@@ -21,6 +21,16 @@
                         <div>
                             <div class="Film_list_modular_name">毒液：致命守护者</div>
                             <div class="Film_list_modular_describe">毒液来袭</div>
+                            <div>
+                                <el-rate
+                                    v-model="score"
+                                    :max=5
+                                    disabled
+                                    show-score
+                                    text-color="#ff9900"
+                                    score-template="{value}">
+                                </el-rate>
+                            </div>
                         </div>
                     </el-card>
                 </div>
@@ -41,6 +51,16 @@
                         <div>
                             <div class="Film_list_modular_name">毒液：致命守护者</div>
                             <div class="Film_list_modular_describe">毒液来袭</div>
+                            <div>
+                                <el-rate
+                                    v-model="score"
+                                    :max=5
+                                    disabled
+                                    show-score
+                                    text-color="#ff9900"
+                                    score-template="{value}">
+                                </el-rate>
+                            </div>
                         </div>
                     </el-card>
                 </div>
@@ -61,6 +81,16 @@
                         <div>
                             <div class="Film_list_modular_name">毒液：致命守护者</div>
                             <div class="Film_list_modular_describe">毒液来袭</div>
+                            <div>
+                                <el-rate
+                                    v-model="score"
+                                    :max=5
+                                    disabled
+                                    show-score
+                                    text-color="#ff9900"
+                                    score-template="{value}">
+                                </el-rate>
+                            </div>
                         </div>
                     </el-card>
                 </div>
@@ -80,6 +110,16 @@
                         <div>
                             <div class="Film_list_modular_name">毒液：致命守护者</div>
                             <div class="Film_list_modular_describe">毒液来袭</div>
+                            <div>
+                                <el-rate
+                                    v-model="score"
+                                    :max=5
+                                    disabled
+                                    show-score
+                                    text-color="#ff9900"
+                                    score-template="{value}">
+                                </el-rate>
+                            </div>
                         </div>
                     </el-card>
                 </div>
@@ -102,6 +142,7 @@ export default {
                 {img:require("../../assets/L4.jpg")}
             ],
             film:require("../../assets/Film.jpg"),
+            score:4.8,//评分
         }
     },
     mounted(){
