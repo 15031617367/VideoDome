@@ -2,7 +2,7 @@
     <div>
         <el-container>
             <!-- :default-active="$route.path" -->
-            <el-header class="Header">
+            <el-header class="Header" id="header">
                 <el-menu
                     :default-active="onRoutes" 
                     router
@@ -125,7 +125,7 @@ export default {
         }
     },
     mounted(){
-
+        window.addEventListener('scroll', this.handleScroll)
     },
     components:{
 
@@ -134,11 +134,25 @@ export default {
         onRoutes(){
             return this.$route.path.replace('/','/')
         }
-
     },
     methods:{
+        //滚轮监听
+        handleScroll () {
+            console.log(document.getElementById("header"))
+            console.log(window.scrollY)
+            // console.log(window.scrollX)
+            // console.log(window.scrollX)
+            if(window.scrollY>56){
+                var header = $("#header");
+                console.log(header);
+                // var header = document.getElementById("header");
+                // header.style.position = "absolute";
+                // console.log("asdsad")
+            }
+        },
+        //菜单回调
         handleSelect(key, keyPath) {
-            
+            // console.log(key, keyPath);
         },
         //菜单跳页
         Link(name,title){

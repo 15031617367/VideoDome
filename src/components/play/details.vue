@@ -15,7 +15,10 @@
             <div class="address_Modular_details">
                 <div class="address_Modular_title">标清</div>
                 <div>
-                    <el-button type="info" v-for="(tiem,index) in 4" :key="index">地址{{index}}</el-button>
+                    <el-button  type="info" 
+                                v-for="(tiem,index) in 4" 
+                                @click="signalBtn()"
+                                :key="index">地址{{index}}</el-button>
                 </div>
             </div>
             <div class="address_Modular_details">
@@ -46,7 +49,14 @@ export default {
     },
     components:{},
     computed:{},
-    methods:{},
+    methods:{
+        signalBtn(){
+            this.$router.push({
+                name:"VideoPlayer"
+            })
+        }
+        
+    },
 }
 </script>
 

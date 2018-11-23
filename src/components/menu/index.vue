@@ -44,7 +44,7 @@
             </div>
             <!-- 电影列表 -->
             <div class="Film_list">
-                <div v-for="(time,index) in 5" class="Film_list_modular" :key="index">
+                <div v-for="(time,index) in 5" class="Film_list_modular" :key="index" @click="details">
                     <div class="nusp"></div>
                     <el-card :body-style="{ padding: '0px' }">
                         <img :src="film" class="image">
@@ -74,7 +74,7 @@
             </div>
             <!-- 电影列表 -->
             <div class="Film_list">
-                <div v-for="(time,index) in 5" class="Film_list_modular" :key="index">
+                <div v-for="(time,index) in 5" class="Film_list_modular" :key="index" @click="details">
                     <div class="nusp"></div>
                     <el-card :body-style="{ padding: '0px' }">
                         <img :src="film" class="image">
@@ -103,7 +103,7 @@
             </div>
             <!-- 电影列表 -->
             <div class="Film_list">
-                <div v-for="(time,index) in 5" class="Film_list_modular" :key="index">
+                <div v-for="(time,index) in 5" class="Film_list_modular" :key="index" @click="details">
                     <div class="nusp"></div>
                     <el-card :body-style="{ padding: '0px' }">
                         <img :src="film" class="image">

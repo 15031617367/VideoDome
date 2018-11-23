@@ -14,6 +14,7 @@ import Record from  "@/components/menu/record"
 
 //播放详情
 import Details from "@/components/play/details"
+import VideoPlayer from "@/components/play/videoPlayer" 
 
 Vue.use(Router)
 
@@ -67,6 +68,11 @@ export default new Router({
                     path:'/details',
                     name:'Details',
                     component:Details
+                },
+                {
+                    path:'/videoPlayer',
+                    name:'VideoPlayer',
+                    component:VideoPlayer
                 }
 
             ]

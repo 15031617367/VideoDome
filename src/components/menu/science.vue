@@ -7,9 +7,10 @@
         </div>
         <el-row :gutter="20">
             <el-col :span="6" v-for="(item,index) in 9" :key="index">
-                <el-card :body-style="{ padding: '0px' }">
-                    <img :src="film" class="image">
-                    <div>
+                <el-card    class="Film_list_card" 
+                            :body-style="{ padding: '0px' }">
+                    <img :src="film" class="image" @click="details">
+                    <div @click="details">
                         <div class="Film_list_modular_name">{{name}}</div>
                         <div class="Film_list_modular_describe">{{describe}}</div>
                         <div>
@@ -66,6 +67,11 @@ export default {
                     this.describe="蚁人-漫威系列";
                     this.score=3.2  
             }
+        },
+        details(){
+            this.$router.push({
+                name:"Details"
+            })
         }
     },
 }
@@ -96,6 +102,9 @@ export default {
 /* 卡片 */
 .Film_list_modular{
     display: flex;
+    cursor: pointer;
+}
+.Film_list_card{
     cursor: pointer;
 }
 .Film_list_modular_describe{
