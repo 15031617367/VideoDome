@@ -2,7 +2,7 @@
     <div>
         <!-- 轮播 -->
         <el-carousel :interval="5000" arrow="always" height="400px">
-            <el-carousel-item v-for="item in WheelPlanting" :key="item">
+            <el-carousel-item v-for="(item,index) in WheelPlanting" :key="index">
                 <img :src="item.img" alt="">
             </el-carousel-item>
         </el-carousel>
