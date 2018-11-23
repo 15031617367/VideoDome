@@ -121,7 +121,7 @@ export default {
             userName:"",
             userPaW:"",
             phone:"",
-
+            Verification:"",// 验证码
         }
     },
     mounted(){
