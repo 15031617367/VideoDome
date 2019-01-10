@@ -15,6 +15,12 @@ require('vue-video-player/src/custom-theme.css');
 import VideoPlayer from 'vue-video-player';
 Vue.use(VideoPlayer);
 
+//jqUI
+import "../src/assets/login/js/jquery-ui.min"
+
+//粒子特效
+import VueParticles from 'vue-particles'  
+Vue.use(VueParticles) 
 
 
 Vue.config.productionTip = false

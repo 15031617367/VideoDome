@@ -19,5 +19,14 @@ export default {
   color: #2c3e50;
   margin: 0px;
   padding:0px;
+  height: 100%;
+  width: 100%;
+}
+.all,html{
+  width: 100%;
+  height: 100%;
+}
+body{
+  height: 100%;
 }
 </style>

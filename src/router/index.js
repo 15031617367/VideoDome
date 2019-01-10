@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home'
 
+//登录
+import Login from "@/components/login/login"
+
 //菜单
 import Index from "@/components/menu/index"
 import Science from  "@/components/menu/science"
@@ -20,6 +23,11 @@ Vue.use(Router)
 
 export default new Router({
     routes: [
+        {
+            path:'/login',
+            name:"Login",
+            component:Login
+        },
         {
             path: '/',
             component: Home,
@@ -77,5 +85,6 @@ export default new Router({
 
             ]
         }
+        
   ]
 })
